@@ -51,7 +51,9 @@ function createHTML(options = {}) {
         * {outline: 0px solid transparent;-webkit-tap-highlight-color: rgba(0,0,0,0);-webkit-touch-callout: none;box-sizing: border-box;}
         html, body { margin: 0; padding: 0;font-family: Arial, Helvetica, sans-serif; font-size:1em; height: 100%}
         body { overflow-y: hidden; -webkit-overflow-scrolling: touch;background-color: ${backgroundColor};caret-color: ${caretColor};}
-        .content {font-family: Arial, Helvetica, sans-serif;color: ${color}; width: 100%;${!useContainer ? 'height:100%;' : ''}-webkit-overflow-scrolling: touch;padding-left: 0;padding-right: 0;}
+        .content {font-family: Arial, Helvetica, sans-serif;color: ${color}; width: 100%;${
+        !useContainer ? 'height:100%;' : ''
+    }-webkit-overflow-scrolling: touch;padding-left: 0;padding-right: 0;}
         .pell { height: 100%;} .pell-content { outline: 0; overflow-y: auto;padding: 10px;height: 100%;${contentCSSText}}
     </style>
     <style>
@@ -431,7 +433,7 @@ function createHTML(options = {}) {
             var content = settings.element.content = createElement('div');
             content.id = 'content';
             content.contentEditable = true;
-            content.spellcheck = false;
+            content.spellcheck = true;
             content.autocapitalize = '${autoCapitalize}';
             content.autocorrect = ${autoCorrect};
             content.autocomplete = 'off';
